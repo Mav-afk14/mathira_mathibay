@@ -67,11 +67,7 @@ int getPositiveInteger(const string &prompt) {
             cout << "Invalid input. Please enter a positive integer.\n";
             continue;
         }
-        stringstream ss(line);
-        int v; char junk;
-        if ((ss >> v) && !(ss >> junk) && v > 0)
-            return v;
-        cout << "Invalid input. Please enter a positive integer.\n";
+        cout <"< Invalid input. Please enter a positive integer.\n";
     }
 }
 
@@ -84,6 +80,10 @@ double fractionToFloat(const string &s) {
 
 vector<int> divisors(int x) {
     x = abs(x);
+        stringstream ss(line);
+        int v; char junk;
+        if ((ss >> v) && !(ss >> junk) && v > 0)
+            return v;
     vector<int> D;
     for (int i = 1; i <= x; ++i)
         if (x % i == 0) D.push_back(i);
@@ -321,7 +321,7 @@ void handlePolynomial(int deg) {
             if (!isNumericInputValid(in) ||
                (i==deg && fractionToFloat(in)==0.0))
             {
-                cout << " Invalid input (leading coeff. should be nonzero).\n";
+                cout << "Invalid input (leading coeff. should be nonzero).\n";
                 continue;
             }
             break;
